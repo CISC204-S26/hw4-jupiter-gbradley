@@ -5,5 +5,5 @@
 [node name="Node2D" type="Node2D" unique_id=1413863448]
 
 [node name="Whip" type="Sprite2D" parent="." unique_id=1681343225]
-position = Vector2(1728, 1128)
+position = Vector2(570, 348)
 texture = ExtResource("1_wtcfe")
