@@ -4,9 +4,10 @@ var movement_speed=500.0
 var normal_speed=500.0
 var sprint_speed=800.0
 var is_invisible = false 
+var cunt_array = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,11 +30,16 @@ func _process(delta: float) -> void:
 		position = position + Vector2(0,-1) * movement_speed * delta
 	if Input.is_action_pressed("move_down"):
 		position = position + Vector2(0,1) * movement_speed * delta
+	if Input.is_action_pressed("interact"):
+		
 
 
 func _on_interaction_detector_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-
+	print("interactable detected")
+	area.set_active(true)
+	nearby_interactables.appened(Area2D)
 
 func _on_interaction_detector_area_exited(area: Area2D) -> void:
-	pass # Replace with function body.
+	print("interactable detected")
+	area.set_active(false)
+	nearby_interactables.appened(Area2D)

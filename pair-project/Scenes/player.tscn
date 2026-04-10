@@ -7,8 +7,8 @@
 radius = 115.161255
 height = 412.38715
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 211.77612
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(160.35297, 142.70972)
 
 [node name="Node2D" type="Node2D" unique_id=209007052]
 
@@ -32,8 +32,9 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Whip/InteractionDetector" unique_id=1322522493]
 light_mask = 2
 visibility_layer = 0
-position = Vector2(-65.647064, 139.01613)
-shape = SubResource("CircleShape2D_onrkg")
+position = Vector2(275.2941, 125.85485)
+shape = SubResource("RectangleShape2D_onrkg")
+debug_color = Color(0.8963522, 0.28758618, 0.3584734, 0.41960785)
 
 [connection signal="area_entered" from="Whip/InteractionDetector" to="Whip" method="_on_interaction_detector_area_entered"]
 [connection signal="area_exited" from="Whip/InteractionDetector" to="Whip" method="_on_interaction_detector_area_exited"]
