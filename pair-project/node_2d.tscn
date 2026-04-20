@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://bi4tjm7prwso6"]
-
-[ext_resource type="Texture2D" uid="uid://eiknakkm5jwd" path="res://Images/whip.webp" id="1_wtcfe"]
-
-[node name="Node2D" type="Node2D" unique_id=1413863448]
-
-[node name="Whip" type="Sprite2D" parent="." unique_id=1681343225]
-position = Vector2(570, 348)
-texture = ExtResource("1_wtcfe")

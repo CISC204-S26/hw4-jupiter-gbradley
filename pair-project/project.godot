@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Pair project"
-run/main_scene="uid://bpuuf5f38p81v"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://Images/icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 
 [input]
 

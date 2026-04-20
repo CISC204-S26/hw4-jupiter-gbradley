@@ -30,16 +30,16 @@ func _process(delta: float) -> void:
 		position = position + Vector2(0,-1) * movement_speed * delta
 	if Input.is_action_pressed("move_down"):
 		position = position + Vector2(0,1) * movement_speed * delta
-	if Input.is_action_pressed("interact"):
+	#if Input.is_action_pressed("interact"):
 		
 
 
 func _on_interaction_detector_area_entered(area: Area2D) -> void:
 	print("interactable detected")
-	area.set_active(true)
-	nearby_interactables.appened(Area2D)
+	#area.set_active(true)
+	#nearby_interactables.appened(Area2D)
 
 func _on_interaction_detector_area_exited(area: Area2D) -> void:
 	print("interactable detected")
-	area.set_active(false)
-	nearby_interactables.appened(Area2D)
+	#area.set_active(false)
+	#nearby_interactables.appened(Area2D)

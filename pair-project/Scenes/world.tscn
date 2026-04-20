@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cu86fputra7lb"]
+
+[ext_resource type="Texture2D" uid="uid://f6em1wdrg7sx" path="res://Images/background.webp" id="1_8j60k"]
+[ext_resource type="Texture2D" uid="uid://bq4smldoroo3" path="res://Images/wall 2.webp" id="2_8j60k"]
+[ext_resource type="PackedScene" uid="uid://b5qph1taw6wab" path="res://Scenes/collectable.tscn" id="3_5ukr8"]
+[ext_resource type="Texture2D" uid="uid://b4330tp2qdppb" path="res://Images/roof 2.webp" id="3_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://c81len1c2phk3" path="res://Scenes/player.tscn" id="4_o06y3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_tlwt5"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_5ukr8"]
+
+[node name="Node2D" type="Node2D" unique_id=438529107]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1608262067]
+position = Vector2(960.5, 540)
+scale = Vector2(2.2337208, 2.2272727)
+texture = ExtResource("1_8j60k")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=763445266]
+position = Vector2(869, 932)
+scale = Vector2(85.375015, 295.625)
+mesh = SubResource("QuadMesh_tlwt5")
+texture = ExtResource("2_8j60k")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1365347173]
+position = Vector2(1265, 928)
+scale = Vector2(85.375015, 295.625)
+mesh = SubResource("QuadMesh_tlwt5")
+texture = ExtResource("2_8j60k")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="." unique_id=867915233]
+position = Vector2(1065.0001, 672.00006)
+rotation = 3.1415927
+scale = Vector2(486.5, 221.5)
+mesh = SubResource("PrismMesh_5ukr8")
+texture = ExtResource("3_fo5ed")
+
+[node name="Node2D" parent="." unique_id=209007052 instance=ExtResource("4_o06y3")]
+position = Vector2(-6, 453)
+
+[node name="Node2D2" parent="." unique_id=800312986 instance=ExtResource("3_5ukr8")]
+position = Vector2(417, 530)
+
+[node name="Node2D3" parent="." unique_id=1723025602 instance=ExtResource("3_5ukr8")]
+position = Vector2(340, 527)
+
+[node name="Node2D4" parent="." unique_id=518238708 instance=ExtResource("3_5ukr8")]
+position = Vector2(263, 526)
+
+[node name="Node2D5" parent="." unique_id=871746220 instance=ExtResource("3_5ukr8")]
+position = Vector2(191, 520)
+
+[node name="Node2D6" parent="." unique_id=199930116 instance=ExtResource("3_5ukr8")]
+position = Vector2(287, 453)
+
+[node name="Node2D7" parent="." unique_id=2006600148 instance=ExtResource("3_5ukr8")]
+position = Vector2(205, 452)
