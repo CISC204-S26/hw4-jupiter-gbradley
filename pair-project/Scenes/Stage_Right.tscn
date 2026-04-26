@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cjuyo0w321s56"]
+
+[ext_resource type="Texture2D" uid="uid://cntg5jnlxrjog" path="res://Images/Arriaofsrrow.png" id="1_luh17"]
+[ext_resource type="Texture2D" uid="uid://dk2668u2nljcf" path="res://Images/Soma_Cruz_Editable.png" id="2_ew2uk"]
+[ext_resource type="Texture2D" uid="uid://d3pbu3kobtjie" path="res://Images/Sign.png" id="3_ew2uk"]
+[ext_resource type="Script" uid="uid://dhqw7sqcbj50b" path="res://Transition_Right_Back.gd" id="3_v6vr2"]
+[ext_resource type="PackedScene" uid="uid://c81len1c2phk3" path="res://Scenes/player.tscn" id="5_u2f0w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6vr2"]
+size = Vector2(121, 169)
+
+[node name="Node2D" type="Node2D" unique_id=518961775]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=160370634]
+position = Vector2(969, 539.99994)
+scale = Vector2(7.9749994, 6.7749996)
+texture = ExtResource("1_luh17")
+
+[node name="SOMA" type="Sprite2D" parent="." unique_id=557589110]
+position = Vector2(1498, 207)
+scale = Vector2(3.171874, 3.3409092)
+texture = ExtResource("2_ew2uk")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=201058087]
+position = Vector2(60, 686)
+script = ExtResource("3_v6vr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1002898737]
+position = Vector2(12.5, -13.5)
+shape = SubResource("RectangleShape2D_v6vr2")
+
+[node name="Sign_Right_back" type="Sprite2D" parent="." unique_id=1536006489]
+position = Vector2(64.00006, 688.00006)
+scale = Vector2(0.14591837, 0.20204082)
+texture = ExtResource("3_ew2uk")
+flip_h = true
+
+[node name="Node2D" parent="." unique_id=209007052 instance=ExtResource("5_u2f0w")]
+position = Vector2(-422, 162)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

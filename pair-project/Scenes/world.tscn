@@ -5,10 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://b5qph1taw6wab" path="res://Scenes/collectable.tscn" id="3_5ukr8"]
 [ext_resource type="Texture2D" uid="uid://b4330tp2qdppb" path="res://Images/roof 2.webp" id="3_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://c81len1c2phk3" path="res://Scenes/player.tscn" id="4_o06y3"]
+[ext_resource type="Texture2D" uid="uid://d3pbu3kobtjie" path="res://Images/Sign.png" id="6_o06y3"]
+[ext_resource type="Script" uid="uid://1mvumy7ce3qh" path="res://Transistion_Right.gd" id="7_k7acu"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_tlwt5"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_5ukr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v1tr"]
+size = Vector2(230.36041, 178.77365)
 
 [node name="Node2D" type="Node2D" unique_id=438529107]
 
@@ -24,7 +29,7 @@ mesh = SubResource("QuadMesh_tlwt5")
 texture = ExtResource("2_8j60k")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1365347173]
-position = Vector2(1265, 928)
+position = Vector2(1265, 928.00006)
 scale = Vector2(85.375015, 295.625)
 mesh = SubResource("QuadMesh_tlwt5")
 texture = ExtResource("2_8j60k")
@@ -56,3 +61,22 @@ position = Vector2(287, 453)
 
 [node name="Node2D7" parent="." unique_id=2006600148 instance=ExtResource("3_5ukr8")]
 position = Vector2(205, 452)
+
+[node name="Sign_Right" type="Sprite2D" parent="." unique_id=1023621493]
+position = Vector2(1818, 990)
+rotation = -0.08092886
+scale = Vector2(0.23673469, 0.26122448)
+texture = ExtResource("6_o06y3")
+
+[node name="Area2D-DoorRight" type="Area2D" parent="." unique_id=1492810197]
+position = Vector2(1809.0001, 965.00006)
+rotation = 0.59923273
+script = ExtResource("7_k7acu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D-DoorRight" unique_id=908711720]
+position = Vector2(7.9364886, 15.166076)
+rotation = -0.62079495
+shape = SubResource("RectangleShape2D_5v1tr")
+
+[connection signal="body_entered" from="Area2D-DoorRight" to="Area2D-DoorRight" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D-DoorRight" to="Area2D-DoorRight" method="_on_body_exited"]
