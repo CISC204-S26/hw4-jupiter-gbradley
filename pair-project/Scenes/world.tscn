@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c81len1c2phk3" path="res://Scenes/player.tscn" id="4_o06y3"]
 [ext_resource type="Texture2D" uid="uid://d3pbu3kobtjie" path="res://Images/Sign.png" id="6_o06y3"]
 [ext_resource type="Script" uid="uid://1mvumy7ce3qh" path="res://Transistion_Right.gd" id="7_k7acu"]
+[ext_resource type="Script" uid="uid://t8o21jcfqsm0" path="res://Trans_Left.gd" id="8_k7acu"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_tlwt5"]
 
@@ -14,6 +15,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5v1tr"]
 size = Vector2(230.36041, 178.77365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fj1v"]
+size = Vector2(204, 194)
 
 [node name="Node2D" type="Node2D" unique_id=438529107]
 
@@ -68,6 +72,13 @@ rotation = -0.08092886
 scale = Vector2(0.23673469, 0.26122448)
 texture = ExtResource("6_o06y3")
 
+[node name="Sign_left" type="Sprite2D" parent="." unique_id=942412430]
+position = Vector2(98, 1000.0001)
+rotation = -0.08092886
+scale = Vector2(0.23673469, 0.26122448)
+texture = ExtResource("6_o06y3")
+flip_h = true
+
 [node name="Area2D-DoorRight" type="Area2D" parent="." unique_id=1492810197]
 position = Vector2(1809.0001, 965.00006)
 rotation = 0.59923273
@@ -78,5 +89,14 @@ position = Vector2(7.9364886, 15.166076)
 rotation = -0.62079495
 shape = SubResource("RectangleShape2D_5v1tr")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1124750096]
+script = ExtResource("8_k7acu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1640616513]
+position = Vector2(96, 983)
+shape = SubResource("RectangleShape2D_0fj1v")
+
 [connection signal="body_entered" from="Area2D-DoorRight" to="Area2D-DoorRight" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D-DoorRight" to="Area2D-DoorRight" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cyom88gi3fks"]
+
+[ext_resource type="Script" uid="uid://b7i04pvd10ac0" path="res://lever.gd" id="1_pix2u"]
+[ext_resource type="Texture2D" uid="uid://blcraf8p5v6v1" path="res://Images/Lever.webp" id="2_cnfg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0njty"]
+size = Vector2(162, 127.5)
+
+[node name="lever_area" type="StaticBody2D" unique_id=865226669]
+position = Vector2(1855, 606)
+script = ExtResource("1_pix2u")
+
+[node name="lever" type="Sprite2D" parent="." unique_id=167590937]
+position = Vector2(-206.64038, 78.70569)
+rotation = 1.522659
+scale = Vector2(0.45044723, 0.55675125)
+texture = ExtResource("2_cnfg5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1593361585]
+position = Vector2(-206, 92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1389263456]
+position = Vector2(4, -8.25)
+shape = SubResource("RectangleShape2D_0njty")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

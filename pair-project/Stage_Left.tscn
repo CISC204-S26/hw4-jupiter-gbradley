@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ca71kejc6r8py"]
+
+[ext_resource type="Texture2D" uid="uid://beupswn5hw7i7" path="res://Images/Hell.png" id="1_tagmj"]
+[ext_resource type="Texture2D" uid="uid://c5ddmx7fyj6mv" path="res://Images/crystal-chandelier-isolate-on-transparency-background-png.webp" id="2_fnf75"]
+[ext_resource type="Script" uid="uid://dbu2py2p41bf0" path="res://Scenes/character_body_2d.gd" id="3_84no4"]
+[ext_resource type="Texture2D" uid="uid://eiknakkm5jwd" path="res://Images/whip.webp" id="4_fpvfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojf2e"]
+size = Vector2(1926.5, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw36o"]
+size = Vector2(182, 279)
+
+[node name="Node2D" type="Node2D" unique_id=1462724672]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1263843305]
+position = Vector2(959.00006, 537.99994)
+scale = Vector2(8.008333, 6.724999)
+texture = ExtResource("1_tagmj")
+
+[node name="Chandelier" type="Sprite2D" parent="." unique_id=1095528576]
+position = Vector2(1099, 211)
+scale = Vector2(0.62142855, 0.30857143)
+texture = ExtResource("2_fnf75")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1816918851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1900375330]
+position = Vector2(961.75, 902)
+shape = SubResource("RectangleShape2D_ojf2e")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=781132931]
+position = Vector2(86, 216)
+scale = Vector2(1, 0.92)
+script = ExtResource("3_84no4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=353714919]
+position = Vector2(5.0000305, 557.00006)
+scale = Vector2(0.5694444, 0.5184874)
+texture = ExtResource("4_fpvfq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=900308588]
+position = Vector2(0, 544.5)
+shape = SubResource("RectangleShape2D_tw36o")

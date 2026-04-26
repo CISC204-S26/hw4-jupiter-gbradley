@@ -10,6 +10,9 @@ height = 412.38715
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 65.793526
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(222, 365)
+
 [node name="Node2D" type="Node2D" unique_id=209007052]
 
 [node name="Whip" type="CharacterBody2D" parent="." unique_id=203374863]
@@ -34,6 +37,11 @@ monitorable = false
 visibility_layer = 2
 position = Vector2(119.647064, 32.62903)
 shape = SubResource("CircleShape2D_onrkg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Whip" unique_id=919065744]
+position = Vector2(-69.882385, 146.14514)
+scale = Vector2(1.0588236, 1.0967742)
+shape = SubResource("RectangleShape2D_cvnsp")
 
 [connection signal="area_entered" from="Whip/Area2D" to="Whip" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Whip/Area2D" to="Whip" method="_on_area_2d_area_exited"]
