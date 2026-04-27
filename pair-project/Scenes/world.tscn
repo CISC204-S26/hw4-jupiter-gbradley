@@ -19,7 +19,7 @@ size = Vector2(230.36041, 178.77365)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0fj1v"]
 size = Vector2(204, 194)
 
-[node name="Node2D" type="Node2D" unique_id=438529107]
+[node name="player" type="Node2D" unique_id=438529107 groups=["player"]]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1608262067]
 position = Vector2(960.5, 540)
@@ -33,13 +33,13 @@ mesh = SubResource("QuadMesh_tlwt5")
 texture = ExtResource("2_8j60k")
 
 [node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1365347173]
-position = Vector2(1265, 928.00006)
+position = Vector2(1270, 933.00006)
 scale = Vector2(85.375015, 295.625)
 mesh = SubResource("QuadMesh_tlwt5")
 texture = ExtResource("2_8j60k")
 
 [node name="MeshInstance2D3" type="MeshInstance2D" parent="." unique_id=867915233]
-position = Vector2(1065.0001, 672.00006)
+position = Vector2(1073.0001, 673.00006)
 rotation = 3.1415927
 scale = Vector2(486.5, 221.5)
 mesh = SubResource("PrismMesh_5ukr8")
@@ -48,23 +48,35 @@ texture = ExtResource("3_fo5ed")
 [node name="Node2D" parent="." unique_id=209007052 instance=ExtResource("4_o06y3")]
 position = Vector2(-6, 453)
 
-[node name="Node2D2" parent="." unique_id=800312986 instance=ExtResource("3_5ukr8")]
-position = Vector2(417, 530)
+[node name="collectable2" parent="." unique_id=800312986 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(423, 535)
 
-[node name="Node2D3" parent="." unique_id=1723025602 instance=ExtResource("3_5ukr8")]
-position = Vector2(340, 527)
+[node name="collectable3" parent="." unique_id=1723025602 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(342, 533)
 
-[node name="Node2D4" parent="." unique_id=518238708 instance=ExtResource("3_5ukr8")]
-position = Vector2(263, 526)
+[node name="collectable4" parent="." unique_id=518238708 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(265, 534)
 
-[node name="Node2D5" parent="." unique_id=871746220 instance=ExtResource("3_5ukr8")]
-position = Vector2(191, 520)
+[node name="collectable5" parent="." unique_id=871746220 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(187, 532)
 
-[node name="Node2D6" parent="." unique_id=199930116 instance=ExtResource("3_5ukr8")]
-position = Vector2(287, 453)
+[node name="collectable6" parent="." unique_id=199930116 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(301, 464)
 
-[node name="Node2D7" parent="." unique_id=2006600148 instance=ExtResource("3_5ukr8")]
-position = Vector2(205, 452)
+[node name="collectable7" parent="." unique_id=2006600148 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(222, 461)
+
+[node name="collectable8" parent="." unique_id=1451200146 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(383, 466)
+
+[node name="collectable9" parent="." unique_id=404735969 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(264, 393)
+
+[node name="collectable10" parent="." unique_id=1655513632 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(344, 397)
+
+[node name="collectable11" parent="." unique_id=1686344956 groups=["player"] instance=ExtResource("3_5ukr8")]
+position = Vector2(307, 327)
 
 [node name="Sign_Right" type="Sprite2D" parent="." unique_id=1023621493]
 position = Vector2(1818, 990)

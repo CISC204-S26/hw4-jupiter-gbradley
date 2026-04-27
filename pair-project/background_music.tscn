@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cboawnj7fwbfm"]
+
+[ext_resource type="AudioStream" uid="uid://bykxhsl0ulec8" path="res://Images/02 Vampire Killer.mp3" id="1_4m5bw"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=2133413124]
+stream = ExtResource("1_4m5bw")
+volume_db = -32.0
+autoplay = true
