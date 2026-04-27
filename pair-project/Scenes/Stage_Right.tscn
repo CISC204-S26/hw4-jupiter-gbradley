@@ -4,16 +4,59 @@
 [ext_resource type="Texture2D" uid="uid://dk2668u2nljcf" path="res://Images/Soma_Cruz_Editable.png" id="2_ew2uk"]
 [ext_resource type="Script" uid="uid://l8ywfn83rp3f" path="res://Scenes/door.gd" id="3_okixt"]
 [ext_resource type="Texture2D" uid="uid://pjk3fosic0ms" path="res://Images/Iron Door.png" id="3_tqis5"]
-[ext_resource type="Script" uid="uid://dbu2py2p41bf0" path="res://Scenes/character_body_2d.gd" id="6_okixt"]
-[ext_resource type="PackedScene" uid="uid://cyom88gi3fks" path="res://Lever.tscn" id="6_s2m46"]
+[ext_resource type="PackedScene" uid="uid://cyom88gi3fks" path="res://Scenes/Lever.tscn" id="6_s2m46"]
 [ext_resource type="Script" uid="uid://dqm0d3220r7o1" path="res://Scripts/speakk.gd" id="6_tfc3h"]
 [ext_resource type="Texture2D" uid="uid://eiknakkm5jwd" path="res://Images/whip.webp" id="6_tqis5"]
+
+[sub_resource type="GDScript" id="GDScript_7nd3e"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 400.0
+const JUMP_VELOCITY = 0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"Jump\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"move_left\", \"move_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+
+
+func _on_door_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okixt"]
 size = Vector2(182, 279)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s2m46"]
 radius = 165.89455
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2m46"]
+size = Vector2(1747.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wedip"]
+size = Vector2(210, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqis5"]
+size = Vector2(30.5, 326.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xw35"]
+size = Vector2(21, 793)
 
 [node name="Node2D" type="Node2D" unique_id=518961775]
 
@@ -30,7 +73,7 @@ flip_h = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=284453867]
 position = Vector2(341, 74)
-script = ExtResource("6_okixt")
+script = SubResource("GDScript_7nd3e")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=267809724]
 position = Vector2(5.0000305, 557.00006)
@@ -76,6 +119,28 @@ shape = SubResource("CircleShape2D_s2m46")
 
 [node name="lever_area" parent="." unique_id=865226669 instance=ExtResource("6_s2m46")]
 position = Vector2(1787, 612)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=999398964]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=771403469]
+position = Vector2(1095, 773)
+shape = SubResource("RectangleShape2D_s2m46")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor" unique_id=367038334]
+position = Vector2(114, 814)
+shape = SubResource("RectangleShape2D_wedip")
+
+[node name="Right Wall" type="StaticBody2D" parent="." unique_id=1871563803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=1982690226]
+position = Vector2(1911.75, 593.25)
+shape = SubResource("RectangleShape2D_tqis5")
+
+[node name="Left Wall" type="StaticBody2D" parent="." unique_id=496825603]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=942422398]
+position = Vector2(3, 68)
+shape = SubResource("RectangleShape2D_2xw35")
 
 [connection signal="body_entered" from="Door/DoorZone" to="lever_area" method="_on_door_zone_body_entered"]
 [connection signal="body_exited" from="Door/DoorZone" to="lever_area" method="_on_door_zone_body_exited"]

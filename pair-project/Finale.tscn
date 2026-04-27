@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bxeltcw3lmf84"]
+
+[ext_resource type="VideoStream" uid="uid://dnfme7yde2qc2" path="res://Images/Castlevania Rondo of Blood - Death (Prologue) Boss Fight 4K - FFM TV (1080p) (online-video-cutter.com).ogv" id="1_2gpdn"]
+[ext_resource type="Script" uid="uid://d042pr88nvnik" path="res://FinaleText.gd" id="2_3rrir"]
+
+[node name="Node2D" type="Node2D" unique_id=350935187]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1494198189]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 1933.0
+offset_bottom = 1073.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_2gpdn")
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=231971625]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1793593628]
+offset_left = 409.0
+offset_top = 311.0
+offset_right = 1089.0
+offset_bottom = 871.0
+theme_override_font_sizes/normal_font_size = 50
+script = ExtResource("2_3rrir")

@@ -96,6 +96,15 @@ script = ExtResource("8_k7acu")
 position = Vector2(96, 983)
 shape = SubResource("RectangleShape2D_0fj1v")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=301621054]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 794.0
+offset_bottom = 296.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Helpful Hints:
+You can only jump when presented with an obstacle too high. "
+
 [connection signal="body_entered" from="Area2D-DoorRight" to="Area2D-DoorRight" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D-DoorRight" to="Area2D-DoorRight" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

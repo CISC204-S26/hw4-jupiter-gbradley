@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bwusx500dsv7j"
+path="res://.godot/imported/Castlevania Rondo of Blood - Death (Prologue) Boss Fight 4K - FFM TV (1080p).ogg-a57c9d3cd9ab9936e2702769dc6762be.oggvorbisstr"
+
+[deps]
+
+source_file="res://Images/Castlevania Rondo of Blood - Death (Prologue) Boss Fight 4K - FFM TV (1080p).ogg"
+dest_files=["res://.godot/imported/Castlevania Rondo of Blood - Death (Prologue) Boss Fight 4K - FFM TV (1080p).ogg-a57c9d3cd9ab9936e2702769dc6762be.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

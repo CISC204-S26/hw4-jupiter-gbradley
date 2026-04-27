@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://ca71kejc6r8py"]
+
+[ext_resource type="Texture2D" uid="uid://beupswn5hw7i7" path="res://Images/Hell.png" id="1_7nd3e"]
+[ext_resource type="Texture2D" uid="uid://c5ddmx7fyj6mv" path="res://Images/crystal-chandelier-isolate-on-transparency-background-png.webp" id="2_lylv2"]
+[ext_resource type="Texture2D" uid="uid://eiknakkm5jwd" path="res://Images/whip.webp" id="4_7b42p"]
+[ext_resource type="Script" uid="uid://y235csm1bhuy" path="res://Scenes/character_body_2d3.gd" id="4_lylv2"]
+[ext_resource type="Texture2D" uid="uid://cvicuct4v2grn" path="res://Images/pngtree-old-wooden-door-of-castle-png-image_12516552.png" id="5_m0q4h"]
+[ext_resource type="PackedScene" uid="uid://cbidyc2ylcst8" path="res://Scenes/key.tscn" id="6_lylv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojf2e"]
+size = Vector2(1926.5, 67)
+
+[sub_resource type="GDScript" id="GDScript_lylv2"]
+script/source = "extends StaticBody2D
+
+
+
+func _on_key_gate_opened() -> void:
+	if Input.is_action_just_pressed(\"interact\"):
+		get_tree().change_scene_to_file(\"res://Drac_Room.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evprw"]
+size = Vector2(244, 371)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw36o"]
+size = Vector2(213, 304.7826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lylv2"]
+size = Vector2(17, 880.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcdkk"]
+size = Vector2(19, 514)
+
+[node name="Node2D" type="Node2D" unique_id=1462724672]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1263843305]
+position = Vector2(959.00006, 537.99994)
+scale = Vector2(8.008333, 6.724999)
+texture = ExtResource("1_7nd3e")
+
+[node name="Chandelier" type="Sprite2D" parent="." unique_id=1095528576]
+position = Vector2(1099, 211)
+scale = Vector2(0.62142855, 0.30857143)
+texture = ExtResource("2_lylv2")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1816918851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1900375330]
+position = Vector2(960, 917)
+shape = SubResource("RectangleShape2D_ojf2e")
+
+[node name="Gate" type="StaticBody2D" parent="." unique_id=288549246]
+script = SubResource("GDScript_lylv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gate" unique_id=855506597]
+position = Vector2(1803, 687)
+texture = ExtResource("5_m0q4h")
+
+[node name="gatezone" type="Area2D" parent="Gate" unique_id=1464239435]
+position = Vector2(1810, 693)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate/gatezone" unique_id=544057015]
+position = Vector2(-10, 0)
+shape = SubResource("RectangleShape2D_evprw")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=781132931]
+position = Vector2(111, 211)
+scale = Vector2(1, 0.92)
+script = ExtResource("4_lylv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=353714919]
+position = Vector2(5.0000305, 557.00006)
+scale = Vector2(0.5694444, 0.5184874)
+texture = ExtResource("4_7b42p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=900308588]
+position = Vector2(15.5, 557.39105)
+shape = SubResource("RectangleShape2D_tw36o")
+
+[node name="Key" parent="." unique_id=461617612 instance=ExtResource("6_lylv2")]
+position = Vector2(934, 182)
+scale = Vector2(0.28763726, 0.23999998)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1610917852]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=226073210]
+position = Vector2(-5, 428)
+shape = SubResource("RectangleShape2D_lylv2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=876301192]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1641545441]
+position = Vector2(1938, 613)
+shape = SubResource("RectangleShape2D_dcdkk")
+
+[connection signal="body_entered" from="Gate/gatezone" to="Key" method="_on_gatezone_body_entered"]
+[connection signal="body_exited" from="Gate/gatezone" to="Key" method="_on_gatezone_body_exited"]
+[connection signal="gate_opened" from="Key" to="Gate" method="_on_key_gate_opened"]

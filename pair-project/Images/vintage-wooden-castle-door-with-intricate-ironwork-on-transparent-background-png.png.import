@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3f0dfm5xwo6r"
-path="res://.godot/imported/door.png-75a02b41f94f03559ebbe98109559dcb.ctex"
+uid="uid://cky5suf2vukpn"
+path="res://.godot/imported/vintage-wooden-castle-door-with-intricate-ironwork-on-transparent-background-png.png-4e7fc41d4c75859e5b57d92107cec550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/door.png"
-dest_files=["res://.godot/imported/door.png-75a02b41f94f03559ebbe98109559dcb.ctex"]
+source_file="res://Images/vintage-wooden-castle-door-with-intricate-ironwork-on-transparent-background-png.png"
+dest_files=["res://.godot/imported/vintage-wooden-castle-door-with-intricate-ironwork-on-transparent-background-png.png-4e7fc41d4c75859e5b57d92107cec550.ctex"]
 
 [params]
 

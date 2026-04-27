@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://cbidyc2ylcst8"]
-
-[ext_resource type="Texture2D" uid="uid://b0q2axv660oo0" path="res://Images/Skull_Key_AoS_Icon.webp" id="1_up4cr"]
-
-[node name="Key" type="StaticBody2D" unique_id=461617612]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=264336013]
-position = Vector2(962, 432)
-texture = ExtResource("1_up4cr")

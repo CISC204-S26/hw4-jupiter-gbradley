@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bgs21hjyxe47m"]
+
+[ext_resource type="Texture2D" uid="uid://bukmyer1hr0u7" path="res://Images/Throne_Room_-_Symphony_of_the_Night_-_01.webp" id="1_url6a"]
+[ext_resource type="Texture2D" uid="uid://di0oylrfhlxhx" path="res://Images/julious.webp" id="2_rdono"]
+[ext_resource type="Script" uid="uid://dh06jbmyurvol" path="res://juliussss.gd" id="3_t1iut"]
+[ext_resource type="Script" uid="uid://c483ituhyt0l2" path="res://character_body_2d2.gd" id="5_i2bcv"]
+[ext_resource type="PackedScene" uid="uid://c3saa7dbsqowa" path="res://window.tscn" id="6_i2bcv"]
+[ext_resource type="Texture2D" uid="uid://eiknakkm5jwd" path="res://Images/whip.webp" id="6_wnqma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvvlf"]
+size = Vector2(209, 302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h87y"]
+size = Vector2(1945, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2bcv"]
+size = Vector2(79.5, 925)
+
+[node name="Node2D" type="Node2D" unique_id=1764524694]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=813982430]
+position = Vector2(965.00006, 540)
+scale = Vector2(7.6960006, 5.5567007)
+texture = ExtResource("1_url6a")
+
+[node name="Julius" type="Sprite2D" parent="." unique_id=1439541860]
+position = Vector2(1415.0001, 775.00006)
+scale = Vector2(0.725, 0.74444443)
+texture = ExtResource("2_rdono")
+
+[node name="Julius_Text" type="CanvasLayer" parent="." unique_id=195188018]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Julius_Text" unique_id=978917367]
+anchors_preset = -1
+anchor_right = 0.036000002
+anchor_bottom = 0.037
+offset_left = 1224.0
+offset_top = 257.0
+offset_right = 1544.88
+offset_bottom = 621.04
+theme_override_font_sizes/normal_font_size = 50
+script = ExtResource("3_t1iut")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Julius_Text" unique_id=1233153170]
+offset_top = -3.0
+offset_right = 425.0
+offset_bottom = 198.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Click to 'Talk\""
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1232944990]
+position = Vector2(-339, 8)
+script = ExtResource("5_i2bcv")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1453817315]
+position = Vector2(452.5, 754.25)
+scale = Vector2(0.4861111, 0.5117647)
+texture = ExtResource("6_wnqma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1100793195]
+position = Vector2(459.5, 756)
+shape = SubResource("RectangleShape2D_qvvlf")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1847881530]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1245137399]
+position = Vector2(962.5, 947.5)
+shape = SubResource("RectangleShape2D_2h87y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1189748839]
+position = Vector2(-353, 14)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1798195752]
+position = Vector2(1306, 13)
+shape = SubResource("RectangleShape2D_2h87y")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1295841484]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1558666796]
+position = Vector2(-38.75, 452.5)
+shape = SubResource("RectangleShape2D_i2bcv")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1737340462]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1111330373]
+position = Vector2(1955, 499)
+shape = SubResource("RectangleShape2D_i2bcv")
+
+[node name="Window" parent="." unique_id=1312630233 instance=ExtResource("6_i2bcv")]
+position = Vector2(671, 81)
+scale = Vector2(1.1832722, 1.3427235)
