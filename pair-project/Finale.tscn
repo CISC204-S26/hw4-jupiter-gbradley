@@ -20,9 +20,8 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=231971625]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1793593628]
-offset_left = 409.0
-offset_top = 311.0
-offset_right = 1089.0
-offset_bottom = 871.0
+offset_left = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 theme_override_font_sizes/normal_font_size = 50
 script = ExtResource("2_3rrir")

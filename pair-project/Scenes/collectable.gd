@@ -8,8 +8,8 @@ func _ready():
 		queue_free()
 
 func _on_body_entered(body):
-	print("Entered:", body.name)
-	print("Groups:", body.get_groups())
+	#print("Entered:", body.name)
+	#print("Groups:", body.get_groups())
 
 	if body.is_in_group("player"):
 		GameState.collect(item_id)
